@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        section {
+            width: 40vh;
+            height: 25vh;
+            background: rgb(255, 255, 255);
+            box-shadow: 4px 4px 50px rgb(0, 0, 0, 0.3);
+            border-radius: 5px;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+
+
+
+
+        body {
+            background: gray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        button {
+            width: 12vh;
+            margin-left: 20px;
+            padding: 3px;
+            font-weight: 600;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn1 {
+            background-color: rgb(255, 14, 14);
+        }
+
+        .btn2 {
+            background-color: rgb(23, 255, 23);
+        }
+
+        h1 {
+            margin: 10px 0 10px 0;
+            font-size: 3rem;
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div>
+            <h2>Counting Number</h2>
+            <h1>0</h1>
+        </div>
+        <div>
+            <button type="button" class="btn1">Lover</button>
+            <button type="button" class="btn2">Add</button>
+        </div>
+    </section>
+
+
+    <script>
+        var btn1 = document.querySelector(".btn1");
+        var btn2 = document.querySelector(".btn2");
+        var num = document.querySelector("h1");
+        let count = 0;
+
+        btn1.addEventListener('click', function () {
+            count--;
+            num.innerHTML = count;
+            if(count < 0){
+                num.style.color = 'red';
+            }
+            else if (count === 0){
+                num.style.color = 'blue';
+            }
+        })
+
+        btn2.addEventListener('click', function () {
+            count++;
+            num.innerHTML = count;
+            if(count > 0){
+                num.style.color = 'green';
+            }
+
+            else if (count === 0){
+                num.style.color = 'blue';
+            }
+           
+        })
+
+    </script>
+</body>
+
+</html>
